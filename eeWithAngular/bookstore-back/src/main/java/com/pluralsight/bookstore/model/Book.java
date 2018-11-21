@@ -7,6 +7,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
+// Entity
 
 @Entity
 public class Book {
@@ -14,19 +18,22 @@ public class Book {
     @Id
     @GeneratedValue
     private Long Id;
+    @NotNull // Bean Validation
     @Column(length = 200)
     private String title;
     @Column(length = 2000)
     private String description;
-    @Column(name = "unit_cost")
+    @NotNull
+    @Min(1) // Bean Validation
+    @Column(name = "" + "unit_cost")
     private Float unitCost;
     private String isbn;
-    @Column(name = "publication_date")
+    @Column(name = "" + "publication_date")
     @Temporal(TemporalType.DATE)
     private Date publicationDate;
-    @Column(name = "number_of_pages")
+    @Column(name = "" + "number_of_pages")
     private Integer nbOfPages;
-    @Column(name = "image_url")
+    @Column(name = "" + "image_url")
     private String imageURL;
     private Language language;
 
