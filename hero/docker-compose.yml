@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+
+  app:
+    image: inner/hero
+    ports:
+    - '8080:8080'
+    - '9990:9990'
+    working_dir: /opt/jboss/wildfly/bin
+    command: bash -c './standalone.sh -bmanagement 0.0.0.0'

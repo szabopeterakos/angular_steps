@@ -6,7 +6,7 @@ RUN apt-get -y install supervisor python-pip
 RUN pip install supervisor-stdout
 
 WORKDIR /opt
-RUN curl -O https://archive.apache.org/dist/hbase/1.1.8/hbase-1.1.8-bin.tar.gz
+RUN curl -O https://archive.apache.org/dist/hbase/${HBASE_VERSION}/hbase-${HBASE_VERSION}-bin.tar.gz
 RUN tar -zvxf hbase-${HBASE_VERSION}-bin.tar.gz
 RUN ln -s hbase-${HBASE_VERSION} hbase
 

@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+
+  app:
+    image: jboss/wildfly
+    ports:
+      - '8080:8080'
+      - '9990:9990'
+    volumes:
+      - .:/app
+      - ./build/libs:/opt/jboss/wildfly/standalone/deployments
+    working_dir: /opt/jboss/wildfly/bin
+    command: bash -c './add-user.sh eszapet 123* --silent && ./standalone.sh -bmanagement 0.0.0.0'

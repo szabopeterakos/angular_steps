@@ -1,0 +1,25 @@
+# Fist hbase compose plan
+# with network connection
+# APP_ENV=developement
+
+version: "1"
+
+services:
+  hbase:
+    container_name: hbase
+    build:
+      context: ./hbase_examp
+      dockerfile: .hbase_examp/hbase.dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/var/hbase_cl
+    working_dir: /var/hbase_cl
+    evn_file:
+      - ./.docker/env/hbase.${APP_ENV}.env # confighoz, illteve .sh-k miatt
+    network:
+      - mbb_dev_network
+      
+networks:
+  mbb_dev_network:
+    driver: bridge
