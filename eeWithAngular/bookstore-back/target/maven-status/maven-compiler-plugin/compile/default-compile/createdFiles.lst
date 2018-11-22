@@ -1,0 +1,6 @@
+com\pluralsight\bookstore\model\Book.class
+com\pluralsight\bookstore\model\Language.class
+com\pluralsight\bookstore\model\NumberGeneratorImpl.class
+com\pluralsight\bookstore\model\BookRepository.class
+com\pluralsight\bookstore\model\NumberGenerator.class
+com\pluralsight\bookstore\model\TextUtil.class
