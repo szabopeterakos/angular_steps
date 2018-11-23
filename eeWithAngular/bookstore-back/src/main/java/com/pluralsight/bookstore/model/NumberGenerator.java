@@ -1,15 +1,6 @@
-package com.pluralsight.bookstore.util;
+package com.pluralsight.bookstore.model;
 
-/**
- * @author Antonio Goncalves
- *         http://www.antoniogoncalves.org
- *         --
- */
 public interface NumberGenerator {
-
-    // ======================================
-    // =          Business methods          =
-    // ======================================
 
     String generateNumber();
 }

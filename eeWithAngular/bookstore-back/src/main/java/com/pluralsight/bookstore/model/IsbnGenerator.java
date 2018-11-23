@@ -1,17 +1,8 @@
-package com.pluralsight.bookstore.util;
+package com.pluralsight.bookstore.model;
 
 import java.util.Random;
 
-/**
- * @author Antonio Goncalves
- *         http://www.antoniogoncalves.org
- *         --
- */
 public class IsbnGenerator implements NumberGenerator {
-
-    // ======================================
-    // =          Business methods          =
-    // ======================================
 
     @Override
     public String generateNumber() {

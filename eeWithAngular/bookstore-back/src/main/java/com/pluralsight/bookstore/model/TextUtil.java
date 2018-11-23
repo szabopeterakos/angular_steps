@@ -1,8 +1,15 @@
 package com.pluralsight.bookstore.model;
 
+/**
+ * @author Antonio Goncalves http://www.antoniogoncalves.org --
+ */
 public class TextUtil {
 
-    public String sanitize(String title) {
-        return title.trim().toUpperCase();
+    // ======================================
+    // =          Business methods          =
+    // ======================================
+
+    public String sanitize(String textToSanitize) {
+        return textToSanitize.replaceAll("\\s+", " ");
     }
 }

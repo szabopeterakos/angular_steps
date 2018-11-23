@@ -28,7 +28,7 @@ public class BookRepository {
 
     // JPQL sql syntax
     public List<Book> findAll() {
-        TypedQuery<Book> findAllSQL = entityManager.createQuery("SELECT b FROM Book b ORDER BY b.title", Book.class);
+        TypedQuery<Book> findAllSQL = entityManager.createQuery("SELECT b FROM Book b ORDER BY b.id DESC", Book.class);
         return findAllSQL.getResultList();
     }
 
@@ -40,7 +40,7 @@ public class BookRepository {
 
     @Transactional(TxType.REQUIRED)
     public Book create(Book book) {
-        book.setIsbn(generator.generateISBN());
+        book.setIsbn(generator.generateNumber());
         book.setTitle(textUtil.sanitize(book.getTitle()));
         entityManager.persist(book);
         return book;

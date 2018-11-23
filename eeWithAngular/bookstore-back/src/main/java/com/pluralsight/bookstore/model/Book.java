@@ -1,55 +1,90 @@
 package com.pluralsight.bookstore.model;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
 
 // Entity
 
 @Entity
 public class Book {
 
+    public Book() {
+    }
+
+    public Book(@NotNull String title, String description, Float unitCost, @NotNull String isbn,
+            Date publicationDate, Integer nbOfPages, String imageURL, Language language) {
+        this.title = title;
+        this.description = description;
+        this.unitCost = unitCost;
+        this.isbn = isbn;
+        this.publicationDate = publicationDate;
+        this.nbOfPages = nbOfPages;
+        this.imageURL = imageURL;
+        this.language = language;
+    }
+
     @Id
-    @GeneratedValue
-    private Long Id;
-    @NotNull // Bean Validation
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
     @Column(length = 200)
-    private String title;
-    @Column(length = 2000)
-    private String description;
     @NotNull
-    @Min(1) // Bean Validation
+    @Size(min = 1, max = 200)
+    private String title;
+
+    @Column(length = 10000)
+    @Size(min = 1, max = 10000)
+    private String description;
+
     @Column(name = "" + "unit_cost")
+    @Min(1)
     private Float unitCost;
+
+    @Column(length = 50)
+    @NotNull
+    @Size(min = 1, max = 50)
     private String isbn;
+
     @Column(name = "" + "publication_date")
     @Temporal(TemporalType.DATE)
+    @Past
     private Date publicationDate;
-    @Column(name = "" + "number_of_pages")
+
+    @Column(name = "" + "nb_of_pages")
     private Integer nbOfPages;
+
     @Column(name = "" + "image_url")
     private String imageURL;
+
+    @Enumerated
     private Language language;
 
     public Long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Long id) {
-        Id = id;
+        this.id = id;
     }
 
+    @NotNull
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
+    public void setTitle(@NotNull String title) {
         this.title = title;
     }
 
@@ -69,11 +104,12 @@ public class Book {
         this.unitCost = unitCost;
     }
 
+    @NotNull
     public String getIsbn() {
         return isbn;
     }
 
-    public void setIsbn(String isbn) {
+    public void setIsbn(@NotNull String isbn) {
         this.isbn = isbn;
     }
 
@@ -112,7 +148,7 @@ public class Book {
     @Override
     public String toString() {
         return "Book{" +
-                "Id=" + Id +
+                "id=" + id +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", unitCost=" + unitCost +

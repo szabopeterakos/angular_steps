@@ -4,7 +4,7 @@
 
     <groupId>com.pluralsight.javaee-getting-started</groupId>
     <artifactId>bookstore-back</artifactId>
-    <version>1.0</version>
+    <version>8.1</version>
     <packaging>war</packaging>
 
     <name>bookstore-back</name>
@@ -13,7 +13,7 @@
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    
+
     <dependencies>
         <dependency>
             <groupId>javax</groupId>
