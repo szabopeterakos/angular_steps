@@ -1,15 +1,20 @@
 package com.pluralsight.bookstore.util;
 
+import java.util.Random;
+
 /**
  * @author Antonio Goncalves
  *         http://www.antoniogoncalves.org
  *         --
  */
-public interface NumberGenerator {
+public class IsbnGenerator implements NumberGenerator {
 
     // ======================================
     // =          Business methods          =
     // ======================================
 
-    String generateNumber();
+    @Override
+    public String generateNumber() {
+        return "13-84356-" + Math.abs(new Random().nextInt());
+    }
 }
