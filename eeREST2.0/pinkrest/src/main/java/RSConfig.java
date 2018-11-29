@@ -1,5 +1,7 @@
-package PACKAGE_NAME;
+import javax.ws.rs.ApplicationPath;
+import javax.ws.rs.core.Application;
 
-public class RSConfig {
+@ApplicationPath("api")
+public class RSConfig extends Application {
 
 }
