@@ -17,3 +17,12 @@ var user = 'gabika';
 var matrix = [[1, 2, 3, 6, 5], [6, 7, 8, 9], [10, 9, 8, 7, 6, 5]];
 // document.body.innerHTML = greeter(user);
 document.body.innerHTML = sumMatrix(matrix).toString();
+document.body.innerHTML = "<div class='searchInput'><input placeholder='insert here...'></div>";
+// const searchButton: HTMLButtonElement = new HTMLButtonElement;
+// searchButton.textContent = "send";
+var searchInput = document.getElementsByClassName('searchInput').item(0);
+// searchInput.appendChild(searchButton);
+searchInput.addEventListener('click', function () {
+    searchInput.style.background = '#336633';
+    // searchInput.placeholder = 'hello';
+});
