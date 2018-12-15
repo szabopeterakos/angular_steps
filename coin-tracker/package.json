@@ -11,16 +11,29 @@
   },
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
     "@angular/animations": "^6.0.2",
+=======
+    "@angular/animations": "^6.1.10",
+    "@angular/cdk": "^7.1.1",
+>>>>>>> [coin-tracker] google material imported, form inport needed
     "@angular/common": "^6.0.2",
     "@angular/compiler": "^6.0.2",
     "@angular/core": "^6.0.2",
     "@angular/forms": "^6.0.2",
     "@angular/http": "^6.0.2",
+<<<<<<< HEAD
+=======
+    "@angular/material": "^7.1.1",
+>>>>>>> [coin-tracker] google material imported, form inport needed
     "@angular/platform-browser": "^6.0.2",
     "@angular/platform-browser-dynamic": "^6.0.2",
     "@angular/router": "^6.0.2",
     "core-js": "^2.5.4",
+<<<<<<< HEAD
+=======
+    "hammerjs": "^2.0.8",
+>>>>>>> [coin-tracker] google material imported, form inport needed
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"
   },
