@@ -1,0 +1,28 @@
+body{
+  background-color: black;
+}
+
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+mat-toolbar-row{
+  background: #4e9bcf;
+}
+
+mat-grid-tile {
+  background: #d3e1e9;
+}
+
+#example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#example-container > * {
+  width: 100%;
+}

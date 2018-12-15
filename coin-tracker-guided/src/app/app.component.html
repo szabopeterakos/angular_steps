@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <mat-icon class="example-icon">donut_large</mat-icon>
+    <span>
+      COIN TRACKER ONLINE
+    </span>
+    <span class="example-spacer"></span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-grid-list [cols]="4" rowHeight="2:1">
+  <mat-grid-tile [colspan]="4" [rowspan]="1">
+
+    <div id="example-container">
+      <mat-form-field hintLabel="Max 10 characters">
+        <input matInput #input maxlength="10" placeholder="Enter some input">
+        <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+      </mat-form-field>
+    </div>
+
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="1" [rowspan]="4"></mat-grid-tile>
+  <mat-grid-tile [colspan]="2" [rowspan]="4"></mat-grid-tile>
+  <mat-grid-tile [colspan]="1" [rowspan]="4"></mat-grid-tile>
+  <mat-grid-tile [colspan]="4" [rowspan]="1"></mat-grid-tile>
+</mat-grid-list>
+
+
+<router-outlet></router-outlet>
