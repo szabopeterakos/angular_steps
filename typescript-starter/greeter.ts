@@ -16,6 +16,21 @@ function sumMatrix(matrix: number[][]) {
   return sum;
 }
 
+function theCityThatAlwaysSleeps() {
+    let getCity;
+
+    if (true) {
+        let city = "Seattle";
+        getCity = function() {
+            return city;
+        }
+    }
+
+    return getCity();
+}
+
+let [first] = [1, 2, 3, 4];
+let [, second, , fourth] = [1, 2, 3, 4];
 let user = 'gabika';
 let matrix: number[][] = [[1, 2, 3, 6, 5], [6, 7, 8, 9], [10, 9, 8, 7, 6, 5]];
 
@@ -30,3 +45,28 @@ searchInput.addEventListener('click', () => {
   searchInput.style.background = '#336633';
   // searchInput.placeholder = 'hello';
 });
+
+document.body.innerHTML = greeter(user);
+document.body.innerHTML = sumMatrix(matrix).toString();
+document.body.innerHTML = theCityThatAlwaysSleeps();
+console.log(first);
+console.info(second,fourth);
+
+let o = {
+    a: "foo",
+    b: 12,
+    c: "bar"
+};
+
+// let { a,b } = o;
+
+// ({ a, b } = { a: "baz", b: 101 });
+// ({a,b} = {a:"nothing",b:"new type"}); retyping not working here :)
+
+console.error(o);
+console.error('variable from object: ',o.a,o.b);
+
+let { a, ...passthrough } = o;
+let total = a.length + passthrough.b + passthrough.c.length;
+console.log("total: ",total);
+
