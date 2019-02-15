@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { IMovie } from '../models/movie';
 
 @Component({
   selector: 'app-card',
@@ -6,10 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./card.component.less']
 })
 export class CardComponent implements OnInit {
-  @Input() title: string;
-  @Input() storyline: string;
-  @Input() actors: string[];
-  @Input() imageUrl: string;
+  @Input() movie: IMovie;
 
   constructor() { }
 

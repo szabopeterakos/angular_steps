@@ -1,22 +1,16 @@
-<!-- <mat-card>
-    <mat-card-title>{{title}}</mat-card-title>
-    <mat-card-content>content</mat-card-content>
-</mat-card> -->
-
-
 <mat-expansion-panel>
   <mat-expansion-panel-header>
     <mat-panel-title>
-      {{title}}
+      {{movie.title}}
     </mat-panel-title>
     <mat-panel-description>
-      {{actors}}
+      {{movie.actors}}
     </mat-panel-description>
   </mat-expansion-panel-header>
 
   <div class="content">
-    <img src="{{imageUrl}}">
-    <p>{{storyline}}</p>
+    <img src="{{movie.posterurl}}">
+    <p>{{movie.storyline}}</p>
   </div>
 
 
