@@ -24,12 +24,8 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-<<<<<<< HEAD
-              "src/assets"
-=======
               "src/assets",
               "src/public"
->>>>>>> [jsonfile] add angular material design
             ],
             "styles": [
               "src/styles.less"
@@ -94,12 +90,8 @@
             "scripts": [],
             "assets": [
               "src/favicon.ico",
-<<<<<<< HEAD
-              "src/assets"
-=======
               "src/assets",
               "src/public"
->>>>>>> [jsonfile] add angular material design
             ]
           }
         },
@@ -147,8 +139,4 @@
     }
   },
   "defaultProject": "jsonfile"
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> [jsonfile] add angular material design
