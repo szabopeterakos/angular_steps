@@ -10,12 +10,14 @@ import { MatButtonModule, MatCheckboxModule, MatInputModule, MatCardModule, MatT
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CardComponent } from './card/card.component';
+import { SearchFieldComponent } from './search-field/search-field.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    CardComponent
+    CardComponent,
+    SearchFieldComponent
   ],
   imports: [
     BrowserModule,

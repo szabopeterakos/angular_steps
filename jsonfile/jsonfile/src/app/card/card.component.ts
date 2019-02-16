@@ -8,10 +8,19 @@ import { IMovie } from '../models/movie';
 })
 export class CardComponent implements OnInit {
   @Input() movie: IMovie;
+  fixID: string;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+    this.fixID = this.pad(this.movie.id, 3);
+  }
+
+  pad(num, size) {
+    let s = num + '';
+    while (s.length < size) { s = '0' + s; }
+    return s;
   }
 
 }
