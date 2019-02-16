@@ -11,6 +11,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CardComponent } from './card/card.component';
 import { SearchFieldComponent } from './search-field/search-field.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { SearchFieldComponent } from './search-field/search-field.component';
     MatFormFieldModule,
     MatInputModule,
     FlexLayoutModule,
-    MatExpansionModule
+    MatExpansionModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

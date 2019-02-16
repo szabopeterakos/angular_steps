@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchService } from './search.service';
 
 @Component({
   selector: 'app-search-field',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-field.component.less']
 })
 export class SearchFieldComponent implements OnInit {
+  value;
 
-  constructor() { }
+  constructor(private messageService: SearchService) { }
 
   ngOnInit() {
+  }
+
+  sendMessage(m: string): void {
+    this.messageService.sendMessage(m);
   }
 
 }

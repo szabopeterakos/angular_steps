@@ -17,7 +17,7 @@ export class JsonServiceService {
   getAll(): Observable<IMovie[]> {
     return this.http.get<IMovie[]>(this.urlMock).pipe(
       tap(
-        console.log
+        // console.log
       )
     );
   }
