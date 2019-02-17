@@ -11,23 +11,26 @@ import { SearchService } from '../search-field/search.service';
 export class DashboardComponent implements OnInit {
   filterValue: string;
   movies: IMovie[];
+  filteredMovies: IMovie[];
 
   constructor(private service: JsonServiceService, private messageService: SearchService) {
-    // this.filterValue = '2017';
     this.messageService.getMessage().subscribe(m => {
       console.log(m.text);
       this.filterValue = m.text;
-      this.movies = this.filteredByYear(this.movies, this.filterValue);
+      this.filteredMovies = this.filteredByYear(this.movies, this.filterValue);
     });
   }
 
   ngOnInit() {
     this.service.getAll().subscribe(
-      (data) => { this.movies = data; }
+      (data) => { this.movies = data; this.filteredMovies = this.movies; },
     );
   }
 
   filteredByYear(data: IMovie[], year: string): IMovie[] {
+    if (year === undefined || year === '') {
+      return this.movies;
+    }
     return data.filter((movie: IMovie) => movie.year === year);
   }
 
