@@ -1,15 +1,9 @@
 <span class="rightSearch">
-  <form class="example-form" (keyup.enter)='sendMessage(value)'>
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="search by year" [(ngModel)]='value' name='input'>
+  <p>
+    <mat-form-field appearance="outline" (keyup.enter)='sendMessage(value)'>
+      <mat-label>search by year</mat-label>
+      <input matInput placeholder="2018" [(ngModel)]='value' name='input'>
+      <mat-icon matSuffix>search</mat-icon>
     </mat-form-field>
-  </form>
+  </p>
 </span>
-
-
-<mat-form-field appearance="outline">
-    <mat-label>search by year</mat-label>
-    <input matInput placeholder="2018">
-    <mat-icon matSuffix>search</mat-icon>
-    <mat-hint>Hint</mat-hint>
-  </mat-form-field>
