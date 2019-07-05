@@ -11,6 +11,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {MatCardModule} from '@angular/material/card';
 import { ChartVegaComponent } from './chart-vega/chart-vega.component';
+import { GoogleChartsModule } from 'angular-google-charts';
+import { GoogleChartComponent } from './google-chart/google-chart.component';
 
 
 @NgModule({
@@ -22,6 +24,7 @@ import { ChartVegaComponent } from './chart-vega/chart-vega.component';
     ChartContainerComponent,
     FooterComponent,
     ChartVegaComponent,
+    GoogleChartComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,8 @@ import { ChartVegaComponent } from './chart-vega/chart-vega.component';
     BrowserAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,
-    MatCardModule
+    MatCardModule,
+    GoogleChartsModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],
