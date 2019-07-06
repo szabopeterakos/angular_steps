@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+    color:#aaaaaa;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+  }
+  .menu {
+    float:left;
+    width:25%;
+    text-align:center;
+  }
+  .menu a {
+    background-color:#e5e5e5;
+    padding:8px;
+    margin-top:7px;
+    display:block;
+    width:100%;
+    color:black;
+  }
+  .main {
+    float:left;
+    width:60%;
+    padding:0 20px;
+  }
+  .right {
+    background-color:#e5e5e5;
+    float:left;
+    width:15%;
+    padding:15px;
+    margin-top:7px;
+    text-align:center;
+  }
+  
+  @media only screen and (max-width:720px) {
+    /* For mobile phones: */
+    .menu{width:20%;}
+    .main{width:20%;}
+    .right{width:60%;}
+  }
+  
+  
+  @media only screen and (max-width:520px) {
+    /* For mobile phones: */
+    .menu, .main, .right {
+      width:100%;
+    }
+  }
+  
