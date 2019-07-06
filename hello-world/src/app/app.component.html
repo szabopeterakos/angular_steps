@@ -1,0 +1,53 @@
+<div class="btn-group" dropdown>
+  <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+    Button dropdown <span class="caret"></span>
+  </button>
+  <ul *dropdownMenu class="dropdown-menu" role="menu">
+    <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
+    <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
+    <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
+    <li class="divider dropdown-divider"></li>
+    <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
+    </li>
+  </ul>
+</div>
+
+<accordion [isAnimated]="true">
+  <accordion-group heading="Static Header">
+    This content is straight in the template.
+  </accordion-group>
+  <accordion-group heading="Another group">
+    <p>Some content</p>
+  </accordion-group>
+  <accordion-group heading="Another group">
+    <p>Some content</p>
+  </accordion-group>
+  <accordion-group heading="Another group">
+    <p>Some content</p>
+  </accordion-group>
+</accordion>
+
+<carousel>
+  <slide>
+    <img src="https://cdn.pixabay.com/photo/2019/06/23/01/56/cityscape-4292702_960_720.jpg" alt="first slide" style="display: block; width: 100%;">
+  </slide>
+  <slide>
+    <img src="https://image.shutterstock.com/image-photo/cityscape-urban-scene-modern-scenic-600w-269288081.jpg" alt="second slide" style="display: block; width: 100%;">
+  </slide>
+  <slide>
+    <img src="https://image.shutterstock.com/image-photo/panoramic-skyline-buildings-empty-concrete-600w-601825580.jpg" alt="third slide" style="display: block; width: 100%;">
+  </slide>
+</carousel>
+
+<button type="button" class="btn btn-default btn-secondary"
+        popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+        popoverTitle="Popover on right"
+        placement="right">
+  Popover on right
+</button>
+
+<div class="row">
+  <div class="col-xs-12 col-12 col-md-4 form-group">
+    <bs-datepicker-inline [bsValue]="bsInlineValue"></bs-datepicker-inline>
+  </div>
+</div>
