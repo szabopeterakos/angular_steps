@@ -26,9 +26,9 @@ export class AppComponent implements OnInit {
     };
     embed.default('#vis', this.yourVlSpec, options).then(
       ()=>{
-        const svgElement2 = document.querySelectorAll(".mark-rect.role-mark.marks path")[2];
+        const svgElement2: SVGElement = document.querySelectorAll(".mark-rect.role-mark.marks path")[2] as SVGElement;
         svgElement2.style.stroke = "green";
-        const svgElement0 = document.querySelectorAll(".mark-rect.role-mark.marks path")[0];
+        const svgElement0: SVGElement = document.querySelectorAll(".mark-rect.role-mark.marks path")[0] as SVGElement;
         console.log(svgElement0);
         svgElement0.style.stroke = "red";
         svgElement0.style.fill = "red";
