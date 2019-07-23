@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { DataService } from 'src/data.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +7,4 @@ import { DataService } from 'src/data.service';
 })
 export class AppComponent {
   title = 'communication';
-  constructor(private ds: DataService){
-    ds.get_rawData().subscribe(console.log);
-  }
 }
