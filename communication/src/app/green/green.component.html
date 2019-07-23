@@ -1,1 +1,4 @@
-<p>green works!</p>
+
+<div *ngIf="title$ | async as title">
+    <h1>Welcome to [ {{ title }} ] project!</h1>
+</div>

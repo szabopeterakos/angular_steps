@@ -10,6 +10,6 @@ export class BlueComponent  {
   
   constructor(private rest: RestService) { }
   
-  users$ = this.rest.getResponse;
+  users$ = this.rest.getUsers;
 
 }

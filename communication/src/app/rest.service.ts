@@ -7,10 +7,10 @@ import { map, tap, catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class RestService {
-  response$: Observable<IUser[]>;
+  users$: Observable<IUser[]>;
 
   constructor(private http: HttpClient) {
-    this.response$ = this.http.get<RawUser[]>('/assets/data.json').pipe(
+    this.users$ = this.http.get<RawUser[]>('/assets/data.json').pipe(
       tap(d => {
         console.log('before', d[0])
       }),
@@ -31,7 +31,7 @@ export class RestService {
     );
   }
 
-  get getResponse(): Observable<IUser[]> {
-    return this.response$;
+  get getUsers(): Observable<IUser[]> {
+    return this.users$;
   }
 }
