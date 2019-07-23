@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { map, tap, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class RestService {
 
   constructor(private http: HttpClient) {
     this.response$ = this.http.get<RawUser[]>('/assets/data.json').pipe(
-      tap(d=>{
+      tap(d => {
         console.log('before', d[0])
       }),
       map(users => {
@@ -20,9 +20,14 @@ export class RestService {
           ID: Number(user.ID)
         } as IUser))
       }),
-      tap(d=>{
+      tap(d => {
         console.log('after', d[0])
       }),
+      catchError(err => {
+        alert(`Some error occuerd, sorry :)`)
+        console.log('error in source. Details: ', err);
+        throw err;
+      })
     );
   }
 
