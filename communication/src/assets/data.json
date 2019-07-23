@@ -1,6 +1,4 @@
-{ 
-"objects":[ 
-{ 
+[{ 
 "ID":"1",
 "JobTitle":"Service Supervisor",
 "EmailAddress":"Mabel_Cork6389@sveldo.biz",
@@ -13999,5 +13997,4 @@
 "EmailAddress":"Mandy_Parr4845@corti.com",
 "FirstNameLastName":"Mandy Parr",
 "Country":"Austria"
-}
-]}
+}]

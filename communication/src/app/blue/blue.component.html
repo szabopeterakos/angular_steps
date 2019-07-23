@@ -1,1 +1,7 @@
-<p>blue works!</p>
+<ul *ngIf="users$ | async as users">
+    <li *ngFor="let user of users" class='rainbow'>
+        <h4>{{user.ID}} {{user.FirstNameLastName}}</h4>
+        <h6>{{user.Country}}</h6>
+        <h6>{{user.EmailAddress}} || {{user.JobTitle}}</h6>
+    </li>
+</ul>
