@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { RestService } from '../rest.service';
+import { Component } from '@angular/core';
+import { DataTransformationService } from '../data-transformation.service';
 
 @Component({
   selector: 'app-blue',
@@ -8,8 +8,9 @@ import { RestService } from '../rest.service';
 })
 export class BlueComponent  {
   
-  constructor(private rest: RestService) { }
+  constructor(private dataTransformation: DataTransformationService) { }
   
-  users$ = this.rest.getUsers;
+  // users$ = this.dataTransformation.getAll;
+  users$ = this.dataTransformation.getTop3;
 
 }
