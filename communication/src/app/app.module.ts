@@ -35,7 +35,7 @@ import { CommonModule } from '@angular/common';
     MatCheckboxModule,
   ],
   providers: [],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  // schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule {
