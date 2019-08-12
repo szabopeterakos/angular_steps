@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { GreenComponent } from './green/green.component';
@@ -8,11 +8,14 @@ import { YellowComponent } from './yellow/yellow.component';
 import { OrangeComponent } from './orange/orange.component';
 import { WhiteComponent } from './white/white.component';
 import { HttpClientModule } from '@angular/common/http';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule, MatIconModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { AwesomeTooltipComponent } from './tooptip/tooptip.component';
+import { AwesomeTooltipDirective } from './tooptip/tooptip.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { CommonModule } from '@angular/common';
     BlueComponent,
     YellowComponent,
     OrangeComponent,
-    WhiteComponent
+    WhiteComponent,
+    AwesomeTooltipDirective,
+    AwesomeTooltipComponent
+
   ],
   imports: [
     BrowserModule,
@@ -33,9 +39,10 @@ import { CommonModule } from '@angular/common';
     MatIconModule,
     MatButtonModule,
     MatCheckboxModule,
+    OverlayModule
   ],
+  entryComponents: [AwesomeTooltipComponent],
   providers: [],
-  // schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule {
