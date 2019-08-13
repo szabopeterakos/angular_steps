@@ -19,11 +19,12 @@ export class AwesomeTooltipDirective implements OnInit {
     const positionStrategy = this.overlayPositionBuilder
       .flexibleConnectedTo(this.elementRef)
       .withPositions([{
-        originX: 'center',
-        originY: 'top',
-        overlayX: 'center',
-        overlayY: 'bottom',
-        offsetY: -8,
+        originX: 'end',
+        originY: 'center',
+        overlayX: 'start',
+        overlayY: 'center',
+        offsetY: 0,
+        offsetX: 10
       }]);
 
     this.overlayRef = this.overlay.create({ positionStrategy });
