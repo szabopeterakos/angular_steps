@@ -1,6 +1,18 @@
 <div class="flex-container">
     <mat-icon aria-hidden="false" aria-label="Example home icon">apps</mat-icon>
-    <button mat-raised-button color="primary">click</button>
-    <button mat-raised-button color="primary">hover</button>
+    <button mat-raised-button color="primary" (click)="clickHandler()">click</button>
+    <button mat-raised-button color="primary" (mouseenter)="hoverHandler()"
+        (mouseleave)="hoverOffHandler()">hover</button>
     <button mat-raised-button color="primary">wonder</button>
+    <button mat-raised-button color="primary">{{ number }}</button>
+    <button mat-raised-button color="primary">message</button>
+    <div class="tooltip-active" *ngIf="show">Warning message</div>
+</div>
+
+<div>
+    <ul>
+        <li>Green</li>
+        <li>Blue</li>
+        <li>Yellow</li>
+    </ul>
 </div>
