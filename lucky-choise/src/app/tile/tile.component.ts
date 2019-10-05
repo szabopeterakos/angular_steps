@@ -8,8 +8,10 @@ import { Component, OnInit, Input } from '@angular/core';
 export class TileComponent implements OnInit {
   @Input() state: 'empty' | 'treasure';
   @Input() color: string;
+  isVisible = false;
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 }

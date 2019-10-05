@@ -1,5 +1,18 @@
-<app-nav-panel></app-nav-panel>
+<p class="nav">
+  The
+  <b>
+    {{ title }}
+  </b>
+  game, have fun !
+</p>
 
 <main>
-    <app-tile *ngFor="let tile of array" state="{{tile}}" (click)="onClick(tile)" color="{{color}}"></app-tile>
+  <app-tile
+    *ngFor="let tile of array"
+    state="{{ tile }}"
+    (click)="onClick(tile)"
+    color="{{ color }}"
+  ></app-tile>
 </main>
+
+<app-nav-panel [winner]="winner"></app-nav-panel>
