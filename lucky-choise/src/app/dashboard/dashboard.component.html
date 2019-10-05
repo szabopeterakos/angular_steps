@@ -1,4 +1,4 @@
-<p class="nav">
+<p class="title">
   The
   <b>
     {{ title }}
@@ -15,4 +15,6 @@
   ></app-tile>
 </main>
 
+<p>tries: {{ clickCounter }}</p>
 <app-nav-panel [winner]="winner"></app-nav-panel>
+<p *ngIf="winner">You tried <span>{{ score }}</span> times, neat...</p>

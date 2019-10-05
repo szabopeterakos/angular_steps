@@ -1,28 +1,32 @@
-app-tile {
-  width: auto;
-  height: 100px;
-  background-color: cornflowerblue;
-  border: solid 0.5rem rgb(181, 201, 255);
-  border-radius: 1rem;
-  transition: background-color 0.1s;
-  transition: border 0.5s;
-  text-align: center;
-  &:hover {
-    background-color: rgb(181, 201, 255);
-    border: solid 0.5rem cornflowerblue;
+:host {
+  app-tile {
+    width: auto;
+    height: 100px;
+    background-color: cornflowerblue;
+    border: solid 0.5rem rgb(181, 201, 255);
+    border-radius: 1rem;
+    transition: background-color 0.1s;
+    transition: border 0.5s;
+    text-align: center;
+    &:hover {
+      background-color: rgb(181, 201, 255);
+      border: solid 0.5rem cornflowerblue;
+    }
   }
-}
-
-main {
-  margin: 0 auto;
-  display: grid;
-  width: 700px;
-  grid-gap: 2px;
-  grid-template-columns: auto auto auto auto auto auto;
-}
-
-.nav {
-  margin: 30px auto;
-  text-align: center;
-  font-size: 2rem;
+  
+  main {
+    margin: 0 auto;
+    display: grid;
+    width: 700px;
+    grid-gap: 2px;
+    grid-template-columns: auto auto auto auto auto auto;
+  }
+  
+  .title {
+    margin: 10% auto 5% auto;
+    text-align: center;
+    font-size: 2rem;
+    user-select: none;
+  }
+  
 }

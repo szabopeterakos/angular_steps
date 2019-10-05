@@ -10,29 +10,34 @@ export class DashboardComponent implements OnInit {
   winner = false;
   color = 'green';
   max = 24;
-  @Input() title;
+  clickCounter = 0;
+  score = 0;
+  @Input() title: string;
 
   ngOnInit() {
     this.array = Array(this.max).fill('e');
     const flag = Math.floor(Math.random() * this.max);
     this.array[flag] = 't';
-    console.log('TCL: DashboardComponent -> array', this.array);
   }
 
   onClick(tile: string) {
+    this.clickCounter++;
     if (tile === 't') {
       this.color = 'red';
       this.isWinner();
-    } else{
+    } else {
       this.color = 'orange';
     }
-    console.log('TCL: DashboardComponent -> hover -> tile', tile);
   }
+
   isWinner() {
     this.winner = true;
-    console.log(
-      'TCL: DashboardComponent -> isWinner -> this.winner',
-      this.winner
-    );
+    this.score = this.clickCounter;
+
+    this.reset();
+  }
+
+  reset() {
+    this.clickCounter = 0;
   }
 }

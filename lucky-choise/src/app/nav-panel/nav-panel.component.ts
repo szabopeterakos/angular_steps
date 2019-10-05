@@ -6,6 +6,5 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./nav-panel.component.less']
 })
 export class NavPanelComponent {
-
-  @Input() winner;
+  @Input() winner: string;
 }
