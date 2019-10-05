@@ -7,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
       square works!
     </p>
   `,
-  styleUrls: ['./square.component.sass']
+  styleUrls: ['./square.component.scss']
 })
-export class SquareComponent {}
+export class SquareComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
