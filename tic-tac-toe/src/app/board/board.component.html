@@ -1,0 +1,7 @@
+<p>The current playes is: {{ player }}</p>
+<button (click)="newGame()">Start new Game</button>
+<p *ngIf="winner">The winner is {{ winner }}</p>
+
+<main>
+  <app-square *ngFor="let sq of squares; let i = index " [value]="sq" (click)="makeMove(i)"> </app-square>
+</main>
