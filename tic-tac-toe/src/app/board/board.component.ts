@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { SquareComponent } from '../square/square.component';
 
 @Component({
   selector: 'app-board',
@@ -7,11 +6,9 @@ import { SquareComponent } from '../square/square.component';
   styleUrls: ['./board.component.scss']
 })
 export class BoardComponent implements OnInit {
-  squares: any[];
+  squares: string[];
   xIsNext: boolean;
   winner: string;
-
-  constructor() {}
 
   ngOnInit() {
     this.newGame();
@@ -30,6 +27,10 @@ export class BoardComponent implements OnInit {
 
   makeMove(idx: number) {
     if (!this.squares[idx]) {
+      console.log(
+        'TCL: BoardComponent -> makeMove -> this.squares',
+        this.squares
+      );
       this.squares.splice(idx, 1, this.player);
       this.xIsNext = !this.xIsNext;
     }
