@@ -1,0 +1,5 @@
+<app-nav-panel></app-nav-panel>
+
+<main>
+    <app-tile *ngFor="let tile of array" state="{{tile}}" (click)="onClick(tile)" color="{{color}}"></app-tile>
+</main>
