@@ -1,34 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  text-align: center;
+  background-color: #ffffff;
+}
+
 .font1 {
-  font-family: "Mansalva", cursive;
+  font-family: 'Mansalva', cursive;
+}
+
+button{
+  border-radius: 10%;
+  border: 2px solid rgb(55, 55, 109);
+  background-color: transparent;
+  text-decoration: none;
+  &:hover{
+    border: 2px solid rgb(55, 55, 109, 0.5);
+    color: rgb(73, 73, 73);
+  }
 }
 
 .font2 {
-  font-family: "Playfair Display", serif;
+  font-family: 'Playfair Display', serif;
 }
 
 main {
   display: inline-flex;
+  margin: 30px auto !important;
   user-select: none;
 }
 
 .tile {
   margin: 0 1rem;
-  background-color: #525f5b;
-  text-align: center;
-  transition: opacity 100ms;
+  background-color: #ffffff;
+  transition: opacity 500ms;
   transition: color 500ms;
   border-radius: 5em;
-  width: 5.5rem;
+  width: 100px;
+  height: 100px;
   &:hover {
     color: whitesmoke !important;
   }
 }
 
 .transparent {
-  opacity: 0.1 !important;
+  transition: opacity 1s;
+  opacity: 0;
 }
 
 .visible {
-  opacity: 1 !important;
+  opacity: 1;
 }

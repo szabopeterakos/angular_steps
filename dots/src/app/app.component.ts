@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DotComponent } from './dot/dot.component';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +8,12 @@ import { DotComponent } from './dot/dot.component';
 export class AppComponent implements OnInit {
   title = 'dots';
   dots: IDot[] = [];
-  colors = ['red', 'blue', 'orange'];
+  colors = ['rgb(255, 0, 0, 0.4)', 'rgb(0, 0, 255, 0.4)', 'rgb(255, 165, 0, 0.4)'];
+  colorNames = ['red', 'blue', 'orange'];
 
   ngOnInit(): void {
-    for (let index = 0; index < 3;) {
-      const dot = { i: ++index, c: this.colors[index - 1], s: false } as IDot;
+    for (let index = 0; index < 3; ) {
+      const dot = { i: ++index, c: this.colors[index - 1], cc: this.colorNames[index - 1], s: false } as IDot;
       this.dots.push(dot);
     }
   }
@@ -22,7 +22,6 @@ export class AppComponent implements OnInit {
     console.log('reset dots.s');
     this.dots.map(dot => {
       dot.s = false;
-      // dot.c = 'green';
     });
   }
 }
@@ -30,5 +29,6 @@ export class AppComponent implements OnInit {
 export interface IDot {
   i: number;
   c: string;
+  cc: string;
   s: boolean;
 }
