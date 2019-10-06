@@ -9,12 +9,22 @@ import { IDot } from '../app.component';
 export class DotComponent implements OnInit {
   @Input() value: any;
   @Input() index: number;
+  isHidden = false;
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
     if (this.value) {
       console.log('hey', this.value);
     }
+  }
+
+  clicked() {
+    console.log('dot clicked : ', this.value);
+    this.hideElement();
+  }
+
+  hideElement() {
+    this.isHidden = true;
   }
 }

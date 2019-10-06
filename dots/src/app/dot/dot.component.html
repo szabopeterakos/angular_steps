@@ -1,5 +1,8 @@
-<div class="font1 tile" [style.color]="value.c" *ngIf="value">
-<p>{{value.i}}</p>
-<p>{{value.c}}</p>
-<p>{{value.s}}</p>
+<div class="font1 tile" [style.color]="value.c" *ngIf="value" (click)="clicked()">
+  <p [ngClass]="{
+    'transparent':isHidden,
+    'visible':!isHidden
+  }">{{value.i}}</p>
+  <p>{{value.c}}</p>
+  <p>{{value.s}}</p>
 </div>
