@@ -2,6 +2,7 @@
 body {
   text-align: center;
   background-color: #ffffff;
+  user-select: none;
 }
 
 .font1 {
@@ -9,13 +10,21 @@ body {
 }
 
 button{
-  border-radius: 10%;
+  border-radius: 4px;
+  vertical-align: baseline;
+  padding: 0 20px;
+  padding-top: 5px;
+  padding-bottom: 8px;
   border: 2px solid rgb(55, 55, 109);
   background-color: transparent;
   text-decoration: none;
   &:hover{
     border: 2px solid rgb(55, 55, 109, 0.5);
     color: rgb(73, 73, 73);
+  }
+  &:focus{
+    background-color: rgb(231, 231, 231);
+    outline:none;
   }
 }
 
@@ -26,7 +35,7 @@ button{
 main {
   display: inline-flex;
   margin: 30px auto !important;
-  user-select: none;
+  
 }
 
 .tile {
