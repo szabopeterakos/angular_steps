@@ -9,7 +9,7 @@ import { IDot } from '../app.component';
 export class DotComponent implements OnInit {
   @Input() value: any;
   @Input() index: number;
-  isHidden = false;
+  isHidden = this.value ? this.value.s : false;
 
   constructor() { }
 
@@ -25,6 +25,7 @@ export class DotComponent implements OnInit {
   }
 
   hideElement() {
-    this.isHidden = !this.isHidden;
+    this.value.s = !this.value.s;
+    // this.isHidden = !this.isHidden;
   }
 }

@@ -12,10 +12,18 @@ export class AppComponent implements OnInit {
   colors = ['red', 'blue', 'orange'];
 
   ngOnInit(): void {
-    for (let index = 0; index < 3; ) {
-      const dot = { i: ++index, c: this.colors[index - 1], s: true } as IDot;
+    for (let index = 0; index < 3;) {
+      const dot = { i: ++index, c: this.colors[index - 1], s: false } as IDot;
       this.dots.push(dot);
     }
+  }
+
+  reset() {
+    console.log('reset dots.s');
+    this.dots.map(dot => {
+      dot.s = false;
+      // dot.c = 'green';
+    });
   }
 }
 
