@@ -25,6 +25,6 @@ export class DotComponent implements OnInit {
   }
 
   hideElement() {
-    this.isHidden = true;
+    this.isHidden = !this.isHidden;
   }
 }
