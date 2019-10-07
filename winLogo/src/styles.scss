@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #b9bbba;
+}
+
+content {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transform: translate(0%, 150%);
+}
+
+main {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 220px;
+}
+
+app-container {
+  div {
+    margin: 5px;
+    background-color: #3c3c3c;
+    border-radius: 2px;
+    width: 100px;
+    height: 100px;
+    &:first-child {
+      background: linear-gradient(10deg, #3c3c3c 60%, #d5d7d6 61%);
+    }
+    &:nth-child(2) {
+      background: linear-gradient(10deg, #3c3c3c 43%, #d5d7d6 44%);
+    }
+  }
+}
