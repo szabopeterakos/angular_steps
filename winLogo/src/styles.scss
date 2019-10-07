@@ -12,9 +12,14 @@ content {
   text-align: center;
   font-family: 'SegoeUI';
   font-size: 2.5rem;
+  animation: fade-me-in 500ms ease-in;
   p {
-    // opacity: 0;
     animation: fade-me-in 3s ease-in;
+    // animation-name: fade-me-in;
+    // animation-direction: normal;
+    // animation-duration: 3s;
+    // animation-timing-function: ease-in;
+    // animation-delay: 0s;
   }
 }
 
