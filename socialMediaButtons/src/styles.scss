@@ -1,1 +1,67 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.middle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+}
+
+.btn {
+  background-color: #f1f1f1;
+  width: 90px;
+  height: 90px;
+  display: inline-block;
+  margin: 0.2rem;
+  border-radius: 30%;
+  box-shadow: 0 5px 15px -5px #00000070;
+  color: #3898db;
+  overflow: hidden;
+  position: relative;
+}
+
+.btn svg {
+  display: block;
+  margin: auto;
+  transition: 0.2s linear;
+  padding: 25% 0 0 0;
+}
+
+.btn:hover svg {
+  transform: scale(1.1);
+  color: #f1f1f1;
+}
+
+.btn::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 160%;
+  height: 160%;
+  background: #3498db;
+  transform: rotate(45deg);
+  left: -100%;
+  top: 100%;
+}
+
+.btn:hover::before {
+  animation: button 0.4s 1;
+  top: -28%;
+  left: -50%;
+}
+
+@keyframes button {
+  0% {
+    left: -100%;
+    top: 100%;
+  }
+  100% {
+    top: -28%;
+    left: -50%;
+  }
+}
