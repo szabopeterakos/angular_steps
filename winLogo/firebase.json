@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/winLogo",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
