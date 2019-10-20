@@ -59,6 +59,7 @@ export class SearchComponent implements OnInit, OnDestroy {
     const results = await this.bookService.searchBooks(query);
 
     this.books.data = results.docs;
+    console.log('TCL: SearchComponent -> searchBooks -> this.books.data', this.books.data[0]);
   }
 
   viewDetails(book) {
@@ -66,6 +67,7 @@ export class SearchComponent implements OnInit, OnDestroy {
     this.router.navigate(['details'], {
       queryParams: {
         title: book.title,
+        subtitle: book.subtitle,
         authors: book.author_name && book.author_name.join(', '),
         year: book.first_publish_year,
         cover_id: book.cover_edition_key

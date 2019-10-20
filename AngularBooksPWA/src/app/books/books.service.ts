@@ -3,13 +3,11 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 
 const baseUrl = 'http://openlibrary.org';
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class BooksService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   async get(route: string, data?: any) {
     const url = baseUrl + route;
@@ -31,7 +29,7 @@ export class BooksService {
     });
   }
 
-  searchBooks(query: string) {
+  searchBooks(query: string): Promise<any> {
     return this.get('/search.json', { title: query });
   }
 }
