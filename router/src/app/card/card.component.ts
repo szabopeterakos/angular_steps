@@ -8,12 +8,16 @@ import { Card } from './card';
 })
 export class CardComponent implements OnInit {
   @Input() card: Card;
-
+  isSelected = false;
   constructor() { }
 
   ngOnInit() {
     setTimeout(() => {
       this.card.isHidden = false;
     }, 2000);
+  }
+
+  onClick() {
+    this.isSelected = !this.isSelected;
   }
 }

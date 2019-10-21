@@ -5,10 +5,12 @@
   min-height: 8rem;
   min-width: 8rem;
   border-radius: 0.3rem;
-  border: 0.1rem solid;
+  border: 0.2rem solid transparent;
   text-align: right;
   cursor: pointer;
   transition: opacity ease-in 200ms 200ms;
+  margin: 0.04rem 0.2rem;
+  padding: 0.2rem;
 }
 
 .card:hover {
@@ -31,4 +33,9 @@
   opacity: 0.1;
   color: red !important;
   /* transition: opacity ease-in 200ms; */
+}
+
+.selected {
+  border-color: crimson;
+  border-width: .2rem;
 }
