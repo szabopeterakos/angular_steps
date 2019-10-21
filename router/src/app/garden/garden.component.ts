@@ -21,7 +21,15 @@ export class GardenComponent implements OnInit {
   ngOnInit() {
     this.sampleCard = { id: 1, color: 'green', isHidden: true } as Card;
     this.board = this.randomOrder(this.uniqCards);
+
+    setTimeout(() => {
+      console.log(this.board[0]);
+    }, 0);
+    setTimeout(() => {
+      console.log(this.board[0]);
+    }, 4000);
   }
+
 
   randomOrder(array: Card[]) {
     array = [...array, ...array];
