@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Card } from '../card/card';
+import { Card } from '../card/card.model';
 import { Observable, Subscription } from 'rxjs';
 import { MatchService } from '../match.service';
+import { distinct, tap, map, distinctUntilChanged } from 'rxjs/operators';
+import { start } from 'repl';
 
 @Component({
   selector: 'app-garden',
@@ -11,12 +13,12 @@ import { MatchService } from '../match.service';
 export class GardenComponent implements OnInit {
   title = 'GARDEN';
   uniqCards: Card[] = [
-    { id: 1, color: 'aquamarine', isHidden: true },
-    { id: 2, color: 'blanchedalmond', isHidden: true },
-    { id: 3, color: 'cadetblue', isHidden: true }
+    { color: 'aquamarine', isHidden: true, isSelected: false },
+    { color: 'blanchedalmond', isHidden: true, isSelected: false },
+    { color: 'cadetblue', isHidden: true, isSelected: false }
   ];
   board: Card[] = [];
-  state: any;
+  previousCard: any;
 
   tryFirst;
   trySecond;
@@ -26,14 +28,19 @@ export class GardenComponent implements OnInit {
 
   ngOnInit() {
     this.board = this.randomOrder(this.uniqCards);
-    this.cardService.getMessage().subscribe((m) => {
-      this.state = m;
+    this.cardService.getMessage().pipe(
+      map(res => res.target),
+    ).subscribe((currentCard) => {
+      if (currentCard === this.previousCard) {
+        return;
+      }
+      this.previousCard = currentCard;
       if (this.tryFirst === undefined) {
-        this.tryFirst = this.state;
+        this.tryFirst = currentCard;
       } else {
-        this.trySecond = this.state;
+        this.trySecond = currentCard;
         // TODO: first and second is the same
-        if (this.tryFirst.target.id === this.trySecond.target.id) {
+        if (this.tryFirst.color === this.trySecond.color) {
           console.log('match :)');
           this.score++;
         } else {
@@ -49,16 +56,21 @@ export class GardenComponent implements OnInit {
   }
 
   randomOrder(array: Card[]) {
-    array = [...array, ...array];
+    const cloned = array.map(x => Object.assign({}, x));
+    array = array.concat([...cloned]);
+    console.log('equal 0 and 3? ', array[0] === array[3]);
     const length = array.length;
     const order: Card[] = [];
+    let startID = 1;
     array.forEach(card => {
       let random: number;
       do {
         random = Math.floor(Math.random() * Math.floor(length));
       } while (order[random] != null);
       order[random] = card;
+      order[random].id = startID++;
     });
+    console.log('TCL: GardenComponent -> randomOrder -> order', order);
     return order;
   }
 

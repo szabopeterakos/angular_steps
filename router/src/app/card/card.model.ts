@@ -1,7 +1,7 @@
 export interface Card {
-  id: number;
+  id?: number;
   color: string;
   isHidden: boolean;
-  isSelected?: boolean;
+  isSelected: boolean;
   isActive?: boolean;
 }

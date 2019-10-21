@@ -1,3 +1,3 @@
-<div class="card" [ngClass]="{'hide': card.isHidden, 'selected': isSelected}" [style.background-color]="card.color" (click)="onClick()">
+<div class="card" [ngClass]="{'hide': card.isHidden, 'selected': card.isSelected}" [style.background-color]="card.color" (click)="onClick()">
  <p [style.background-color]="card.color">{{card.color}}</p>
 </div>
