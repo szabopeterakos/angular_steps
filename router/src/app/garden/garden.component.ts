@@ -67,8 +67,8 @@ export class GardenComponent implements OnInit {
       do {
         random = Math.floor(Math.random() * Math.floor(length));
       } while (order[random] != null);
+      card.id = startID++;
       order[random] = card;
-      order[random].id = startID++;
     });
     console.log('TCL: GardenComponent -> randomOrder -> order', order);
     return order;
