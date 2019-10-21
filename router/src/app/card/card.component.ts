@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Card } from './card';
+import { MatchService } from '../match.service';
 
 @Component({
   selector: 'app-card',
@@ -9,7 +10,7 @@ import { Card } from './card';
 export class CardComponent implements OnInit {
   @Input() card: Card;
   isSelected = false;
-  constructor() { }
+  constructor(private cardService: MatchService) { }
 
   ngOnInit() {
     setTimeout(() => {
@@ -19,5 +20,6 @@ export class CardComponent implements OnInit {
 
   onClick() {
     this.isSelected = !this.isSelected;
+    this.cardService.sendMessage({ target: this.card, clicked: true });
   }
 }

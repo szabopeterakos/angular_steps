@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Card } from '../card/card';
+import { Observable, Subscription } from 'rxjs';
+import { MatchService } from '../match.service';
 
 @Component({
   selector: 'app-garden',
@@ -8,28 +10,43 @@ import { Card } from '../card/card';
 })
 export class GardenComponent implements OnInit {
   title = 'GARDEN';
-  constructor() { }
-  // uniqCards: string[] = ['aquamarine', 'blanchedalmond', 'cadetblue'];
   uniqCards: Card[] = [
     { id: 1, color: 'aquamarine', isHidden: true },
     { id: 2, color: 'blanchedalmond', isHidden: true },
     { id: 3, color: 'cadetblue', isHidden: true }
   ];
   board: Card[] = [];
-  sampleCard: Card;
+  state: any;
+
+  tryFirst;
+  trySecond;
+  score = 0;
+
+  constructor(private cardService: MatchService) { }
 
   ngOnInit() {
-    this.sampleCard = { id: 1, color: 'green', isHidden: true } as Card;
     this.board = this.randomOrder(this.uniqCards);
-
-    setTimeout(() => {
-      console.log(this.board[0]);
-    }, 0);
-    setTimeout(() => {
-      console.log(this.board[0]);
-    }, 4000);
+    this.cardService.getMessage().subscribe((m) => {
+      this.state = m;
+      if (this.tryFirst === undefined) {
+        this.tryFirst = this.state;
+      } else {
+        this.trySecond = this.state;
+        // TODO: first and second is the same
+        if (this.tryFirst.target.id === this.trySecond.target.id) {
+          console.log('match :)');
+          this.score++;
+        } else {
+          console.log('not really :(');
+        }
+        this.clearTriesState();
+      }
+    });
   }
-
+  clearTriesState() {
+    this.tryFirst = undefined;
+    this.trySecond = undefined;
+  }
 
   randomOrder(array: Card[]) {
     array = [...array, ...array];
